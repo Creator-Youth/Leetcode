@@ -21,7 +21,7 @@ public class HeapSort2 {
         return Arrays.toString(data);
     }
 
-    //插入元素最后一个，逐步与父节点比较
+    //插入元素最后一个，逐步与父节点比较,进行交换
     public  void insert(int value) throws Exception {
         if(size >=data.length ){
             throw new Exception("堆已满");
@@ -42,6 +42,8 @@ public class HeapSort2 {
             }
         }
     }
+
+    //输出根，最后一个元素替代根，再次构成堆
     public int deleteMin() throws Exception {
         int res;
         if(size<=0){
@@ -75,7 +77,7 @@ public class HeapSort2 {
 
     public static void main(String[] args) throws Exception {
 
-        int data[] = {1,4,6,3,2,5,7};
+        int data[] = {1,4,6,3,2,5,7,2};
         HeapSort2 sort = new HeapSort2(data.length);
         for (int a:data
              ) {
